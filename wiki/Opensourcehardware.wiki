@@ -1,0 +1,171 @@
+#labels openhardware
+作者:harkopen community
+译者:Shawn the R0ck 有后来的自己写在这里
+Open source hardware
+
+Open source hardware
+
+
+1. What is open source hardware?
+
+1. 什么是开源硬件?
+2. Licensing.
+
+2. 授权
+3. How does it help the individual?
+
+3. 怎么样能帮助到个人?
+4. How can it help companies?
+
+4. 怎么样能帮助到公司?
+5. How can countries benefit from it?
+
+5. 对国家有什么益处?
+6. Vision
+
+6. 远景
+7. Join the community
+
+7. 加入社区(不光是harkopen.com,当然也包括HackerFellowship)
+
+ 
+
+1.What is open source hardware?
+
+1. 什么是开源硬件?
+
+ 
+
+Open source hardware refers to the free release of information about the hardware design, such as logic designs (using hardware description language), schematics, bill of materials and printed circuit board (PCB) layout data, often with the use of free open source software to drive the hardware.
+
+开源硬件可以自由的发布硬件设计的信息,比如逻辑设计(硬件描述语言),原理图,材料清单,和印制板的数据,通常自由软件会推动硬件.
+
+ 
+
+Now lets explain some terms we've used in this definition :
+
+先解释一些我们使用到的定义
+
+ 
+
+- hardware description language (HDL) is any language from a class of computer languages and/or programming languages for formal description of electronic circuits. It can describe the circuit's operation, its design and organization, and tests to verify its operation by means of simulation.
+
+- 硬件描述语言(HDL)是针对电路进行正式描述的编成语言.它可以描述电路的操作,它通过模拟来完成设计,组织和测试进行验证.
+
+ 
+
+- printed circuit board, or PCB, is used to mechanically support and electrically connect electronic components using conductive pathways, or traces, etched from copper sheets laminated onto a non-conductive substrate. It is also referred to as printed wiring board (PWB) or etched wiring board. A PCB populated with electronic components is a printed circuit assembly (PCA), also known as a printed circuit board assembly (PCBA).
+
+- 印制板,也称为PCB.它机械的支持和使用传导性路径把电子元件连接起来.或者追踪,把蚀刻的铜薄片放到非传导性基片上.
+
+ 
+
+2. Licensing
+2. 授权
+
+There are a lot of licenses used for open source hardware most of them being borrowed from the software world, some of them especially for hardware like TAPR Open Hardware License, and some of them created solely for a single project like the Balloon Open Hardware License for the Balloon Project.
+
+有很多开源硬件的协议借鉴于自由软件世界,比如针对硬件领域的TAPR开源硬件协议,还有一些是针对单个开源硬件本身的协议比如Balloon开源硬件协议只针对Balloon项目.
+
+ 
+
+3. How does it help the individual?
+
+3. 怎么样能帮助到个人?
+
+
+By offering free access to resources and information one individual is empowered to build, replicate, modify and improve projects according to the project’s license.
+
+通过自由的获得资源和信息,按照项目的协议约定,允许个人去构建,复制,修改和改进项目.
+
+ 
+
+Building your own hardware results in lower costs, a more extensive use of the project and the pleasure of knowing that it came from your own hands. It is indeed more time consuming than buying the finished project but sometimes the geographical position, the costs or simply the passion and the need to invent will drive individuals to build open hardware.
+
+构建一个你个人的低成本硬件,项目可以扩展的到其它应用,这为你赢得了声誉.虽然很多时候人们通常购买现有的硬件,但有时因为地理原因,成本或者简单的欲望(Shawn:这里难道指hacking?)会促使你去构建一个开放硬件.
+
+ 
+
+4. How can it help companies?
+
+4. 怎么样能帮助到公司?
+
+
+- by providing a market for parts, kits, tools and technical support
+
+- 通过提供给市场零件,开发包,工具和技术支持
+
+
+- by virally spreading new products as open source projects
+
+- 通过过滤性的传播开源硬件作为新的产品
+
+ 
+
+Can it be considered a business model?
+
+它是有效的商业模型吗?
+
+
+- YES, because there is a demand and your company can be the offer, because you can benefit and make profit with this
+
+是的,因为市场有需求而你的公司可以提供所需,因为你可以获利于此
+
+(just take a look at Bug Labs, Adafruit or BeagleBoard)
+
+看看这些东东....
+
+
+- and the best part is that the individual is in control improving and having full access to the product (as the world of open source demonstrated thru linux distributions (like Red Hat, Ubuntu and others), Firefox, Apache to mention just a few that became leading products in their niche by being open source minded.
+
+- 最完美的部分是项目改进的流程都有个人掌控,而个人可以完全的访问这些产品(作为世界的著名自由软件开源项目Linux发行版(比如Red Hat,Ubuntu,etc).Firefox,Apache都是少数的影响力的产品因为他们充满可开放的气息.
+
+ 
+
+5. How can countries benefit from it?
+5. 对国家有什么益处?
+
+- promoting open hardware in the educational system provides a great source of projects for students and teachers
+
+- 推动开放硬件在教育系统的发展可以提供非常好的资源给学生和老师
+
+
+- provides a great hobby for the young ones, a social networking activity that promotes clean tech, alternative sources of energy and a greener future
+
+- 提供很好的兴趣给年轻人,一个可以创造美好hacking未来的社区活动
+
+ 
+
+If you are representing a governmental organization and want to collaborate with us we are open to suggestions Contact us.
+
+如果您对政府性的组织有兴趣与我们合作请联系我们.(联系harkopen.com,不是HackerFellowship)
+
+ 
+
+6. Vision
+
+ 
+
+For the humanity to evolve one step is for every member to have free access to knowledge, another step is to provide methods for individuals to store what they accomplish and discover so that the we do not make the same mistakes or reinvent same things, yet another step is to provide them with tools and means to collaborate and help one another.
+
+ 
+
+Harkopen.com respects the licenses that the passionate technological people choose for their projects and promotes open source hardware as permissive as can be, if a project is here we want you the user to be able to reproduce it as accurately as possible and to be able to use it as you wish, to improve it, extend it and share it back with the community.
+
+ 
+
+Given the society that we live in, with the earth's current problems and limitation the humanity needs to overcome the current obstacles thru technology, sustainable , generally available, green technology. And open source hardware provides that platform to help change the world and make it a better place.
+
+ 
+
+Harkopen.com was created with these premises and will try to provide the tools to offer access to information, provide storage of progress and new information, and become a collaborative tool for the human race, thru the Internet to evolve technological.
+
+ 
+
+7. Join the community
+
+ 
+
+- if you are a user you can submit projects, take part is others, join discussion groups and submit news and tutorials;
+
+- if you a company you can promote your project (open source hardware), get precious user feedback, access a market of electronics targeted audience.
