@@ -58,12 +58,16 @@ The Hacker Attitude
 黑客的态度
 1. The world is full of fascinating problems waiting to be solved.
 1. 世界充满了迷人的问题，它们有待于你去解决
+
 2. No problem should ever have to be solved twice.
 2. 不要重复解决问题
+
 3. Boredom and drudgery are evil.
 3. 琐事和苦差事恶不可言
+
 4. Freedom is good.
 5. 自由为善
+
 5. Attitude is no substitute for competence.
 5. 态度无法取代才干
  
