@@ -42,7 +42,7 @@ The hacker mind-set is not confined to this software-hacker culture. There are p
 
 
 There is another group of people who loudly call themselves hackers, but aren't. These are people (mainly adolescent males) who get a kick out of breaking into computers and phreaking the phone system. Real hackers call these people ‘crackers’ and want nothing to do with them. Real hackers mostly think crackers are lazy, irresponsible, and not very bright, and object that being able to break security doesn't make you a hacker any more than being able to hotwire cars makes you an automotive engineer. Unfortunately, many journalists and writers have been fooled into using the word ‘hacker’ to describe crackers; this irritates real hackers no end.
-还有另外一群大声嚷嚷自己是黑客的家伙,但他们不是黑客.他们(主要是青春期的男性)入侵电脑和电话系统.真正的黑客称他们为"cracker"(攻击者)和不屑与他们为伍.真正的黑客大多认为攻击者们很懒惰,不负责任,和没什么值得炫耀的,目标为入侵安全系统并不能让你变成黑客,就像用火线偷走的汽车不能让你成为一名汽车工程师。不幸的是,许多媒体和作家已经很愚蠢的使用"hacker"一词去描述攻击者;这种做法让真正的黑客感到恼火.
+还有另外一群大声嚷嚷自己是黑客的家伙,但他们不是黑客.他们(主要正处青春期的小弟们)入侵电脑和电话系统.真正的黑客称他们为"cracker"(攻击者)和不屑与他们为伍.真正的黑客大多认为攻击者们很懒惰,不负责任,和没什么值得炫耀的,目标为入侵安全系统并不能让你变成黑客,就像用火线偷走的汽车不能让你成为一名汽车工程师。不幸的是,许多媒体和作家已经很愚蠢的使用"hacker"一词去描述攻击者;这种做法让真正的黑客感到恼火.
 
 
 The basic difference is this: hackers build things, crackers break them.
