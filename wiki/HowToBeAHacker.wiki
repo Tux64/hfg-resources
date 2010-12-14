@@ -95,7 +95,7 @@ Or, as the following modern Zen poem has it:
 
 So, if you want to be a hacker, repeat the following things until you believe them:
 
-由此，假如你想成为一名黑客，那就不断复述以下内容，直到你信仰它们。(译注：呵呵～这只是一些黑客原则，遵守它们会使你进步更快～）
+由此，假如你想成为一名黑客，那就不断复述以下内容，直到你信仰它们。
 
 
 1. The world is full of fascinating problems waiting to be solved.
