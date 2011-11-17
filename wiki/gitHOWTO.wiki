@@ -33,7 +33,7 @@ keys manage的add keys里面.
 5.提交修改到本地
        $ git commit README -s -m "COMMIT LOG"
 6.把本地代码同步到服务器
-       $ git push origin master
+       $ git push -u origin master
 7. 发送补丁邮件：
    编译 .git/config 文件添加：
  [sendemail]
