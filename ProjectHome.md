@@ -1,0 +1,1 @@
+a group of monkey-coders created a open-seminar.

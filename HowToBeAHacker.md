@@ -1,0 +1,690 @@
+作者:Eric S Raymond
+
+译者:Shawn the R0ck,NalaGinrut，有后来的自己写在这里
+
+
+
+Why This Document?
+为什么写这篇文章?
+
+
+As editor of the Jargon File and author of a few other well-known documents of similar nature, I often get email requests from enthusiastic network newbies asking (in effect) "how can I learn to be a wizardly hacker?". Back in 1996 I noticed that there didn't seem to be any other FAQs or web documents that addressed this vital question, so I started this one. A lot of hackers now consider it definitive, and I suppose that means it is. Still, I don't claim to be the exclusive authority on this topic; if you don't like what you read here, write your own.
+
+作为Jargon File(行话文档或者叫它黑客字典)的编辑者和一些类似著名文档的作者,我经常收到狂热的网络新手给我的"如何成为一名魔幻hacker?"的 email.早在1996年我就注意到了还没有任何其他FAQ或者web文档上介绍到了这个很重要的问题,所以我开始写这篇文档.多数hacker现在认为这是明智的选择,我也假定他们是对的.我没有宣称这是在这个话题上面唯一权威的参考;如果你不喜欢阅读我的写的文章,那你也可以去写一篇.
+
+If you are reading a snapshot of this document offline, the current version lives at http://catb.org/~esr/faqs/hacker-howto.html.
+如果你正在离线阅读这篇文章的snapshot(Shawn:可以翻译成片断吗?),目前最新的版本:http://catb.org/~esr/faqs/hacker-howto.html.
+
+
+Note: there is a list of Frequently Asked Questions at the end of this document. Please read these—twice—before mailing me any questions about this document.
+注意:在这篇文档的结尾有一个FAQ列表.在您发关于这篇文档的问题前请至少阅读2遍.
+
+
+Numerous translations of this document are available: Arabic Bulgarian, Catalan, Chinese (Simplified), Danish, Dutch, Estonian, Farsi, Finnish, German, Greek Hebrew, Italian Japanese, Norwegian, Polish, Portuguese (Brazilian), Romanian Russian Spanish, Turkish, and Swedish. Note that since this document changes occasionally, they may be out of date to varying degrees.
+文档已经翻译成了多个版本:阿拉伯文,保加利亚,加泰罗尼亚语,中文(简体),丹麦语,荷兰语,爱沙尼亚语,波斯语,芬兰语,德语,希腊语，希伯莱文,意大利文,日文,挪威语,波兰语,葡萄牙语,罗马利亚俄语西班牙语,土耳其语,瑞典语.注意由于本文件不定期的修改,可能会造成不同程度的影响.
+
+
+The five-dots-in-nine-squares diagram that decorates this document is called a glider. It is a simple pattern with some surprising properties in a mathematical simulation called Life that has fascinated hackers for many years. I think it makes a good visual emblem for what hackers are like — abstract, at first a bit mysterious-seeming, but a gateway to a whole world with an intricate logic of its own. Read more about the glider emblem here.
+What Is a Hacker?
+five- dots-in-nine-squares图示修饰了这份文档就是所谓的滑翔机.它是非常简洁的富有神奇属性的模式,在数学模拟里称为Life,Life 吸引了黑客们多年.我认为这是一个好的标注了什么是黑客---抽象的讲,首先是对奥秘的探询,通向这个世界需要错综复杂的逻辑.在这里阅读更多关于滑翔机标徽.
+什么是黑客?
+
+
+The Jargon File contains a bunch of definitions of the term ‘hacker’, most having to do with technical adeptness and a delight in solving problems and overcoming limits. If you want to know how to become a hacker, though, only two are really relevant.
+Jargon File包含了一大堆像"hacker"之类的定义,大多是关于技术的娴熟和很享受解决问题和超越极限的.如果你打算了解怎么样成为一名黑客,只有2件事情跟此有关.
+
+There is a community, a shared culture, of expert programmers and networking wizards that traces its history back through decades to the first time-sharing minicomputers and the earliest ARPAnet experiments. The members of this culture originated the term ‘hacker’. Hackers built the Internet. Hackers made the Unix operating system what it is today. Hackers run Usenet. Hackers make the World Wide Web work. If you are part of this culture, if you have contributed to it and other people in it know who you are and call you a hacker, you're a hacker.
+那要倒退几十年回到那第一次分时微型计算机和早期ARPA网实验室的年代,那时有个以专家程序员和以网络导向组成的具有开放文化的社区.这个社区的成员发明了"hacker"这个词.黑客们创建了因特网.黑客们制造今天都还在使用的Unix操作系统.黑客们使用新闻组.黑客们创建了万维网络(WWW).如果你是这个文化的一部分,如果你已经对社区作出贡献并且社区的人称你为一名黑客,那么你真是一名黑客了.
+
+The hacker mind-set is not confined to this software-hacker culture. There are people who apply the hacker attitude to other things, like electronics or music — actually, you can find it at the highest levels of any science or art. Software hackers recognize these kindred spirits elsewhere and may call them ‘hackers’ too — and some claim that the hacker nature is really independent of the particular medium the hacker works in. But in the rest of this document we will focus on the skills and attitudes of software hackers, and the traditions of the shared culture that originated the term ‘hacker’.
+黑客的思想不是局限在软件领域.有很多保有黑客态度的人在其他领域比如电子或者音乐---事实上,你可以在最高一级的任何科学或者艺术领域找到这样的人.软件黑客认识到那些其他领域的同类也可以称他们为黑客 --有一些人宣称黑客文化独立于特定的工作领域.但是在这个文档的结尾我们会把目光集中在软件黑客的技能上,和创造"hacker"一词的共享文化传统.
+
+
+There is another group of people who loudly call themselves hackers, but aren't. These are people (mainly adolescent males) who get a kick out of breaking into computers and phreaking the phone system. Real hackers call these people ‘crackers’ and want nothing to do with them. Real hackers mostly think crackers are lazy, irresponsible, and not very bright, and object that being able to break security doesn't make you a hacker any more than being able to hotwire cars makes you an automotive engineer. Unfortunately, many journalists and writers have been fooled into using the word ‘hacker’ to describe crackers; this irritates real hackers no end.
+还有另外一群大声嚷嚷自己是黑客的家伙,但他们不是黑客.他们(主要为青春期男性)入侵电脑和电话系统.真正的黑客称他们为"cracker"(攻击者)和不屑与他们为伍.真正的黑客大多认为攻击者们很懒惰,不负责任,和没什么值得炫耀的,目标为入侵安全系统并不能让你变成黑客,就像用火线偷走的汽车不能让你成为一名汽车工程师。不幸的是,许多媒体和作家已经很愚蠢的使用"hacker"一词去描述攻击者;这种做法让真正的黑客感到恼火.
+
+
+The basic difference is this: hackers build things, crackers break them.
+
+最基本的关于黑客和攻击者的区别在于:黑客创造事物,攻击者做毁坏的工作.
+
+If you want to be a hacker, keep reading. If you want to be a cracker, go read the alt.2600 newsgroup and get ready to do five to ten in the slammer after finding out you aren't as smart as you think you are. And that's all I'm going to say about crackers.
+
+如果你打算成为一名黑客就继续阅读吧.如果你想成为一名攻击者就去阅读alt.2600.newsgroup,当然也准备进5到10次监狱后你就会明白你并不像你想象的那么聪明了.那就是我提到到的攻击者.
+
+
+The Hacker Attitude
+黑客的态度
+1. The world is full of fascinating problems waiting to be solved.
+1. 世界充满了迷人的问题，它们有待于你去解决
+
+2. No problem should ever have to be solved twice.
+2. 不要重复解决问题
+
+3. Boredom and drudgery are evil.
+3. 琐事和苦差事恶不可言
+
+4. Freedom is good.
+5. 自由为善
+
+5. Attitude is no substitute for competence.
+5. 态度无法取代才干
+
+
+Hackers solve problems and build things, and they believe in freedom and voluntary mutual help. To be accepted as a hacker, you have to behave as though you have this kind of attitude yourself. And to behave as though you have the attitude, you have to really believe the attitude.
+黑客们解决问题和创造事物,他们信仰自由和志愿的互相帮助.要作为一名被社区承认的黑客,你必须在行为上跟你的态度一样.当然要做的好像你的确有这种态度,你必须真正的去坚信这种态度.
+
+But if you think of cultivating hacker attitudes as just a way to gain acceptance in the culture, you'll miss the point. Becoming the kind of person who believes these things is important for you — for helping you learn and keeping you motivated. As with all creative arts, the most effective way to become a master is to imitate the mind-set of masters — not just intellectually but emotionally as well.
+但是如果你认为培养黑客的态度就像一条获得在社区中得到认同的道路的话,你还没搞懂我的意思.成为具有那些属性的人对你非常重要---帮助你去学习和保持动力.就像所有创造性的艺术一样,大多最有效率成为大师的方法就是去模仿大师的思想--不仅是在理性上而且也在感性上.
+
+Or, as the following modern Zen poem has it:
+或许就像这禅诗一样:
+
+> To follow the path:
+> look to the master,
+> follow the master,
+> walk with the master,
+> see through the master,
+> become the master.
+
+应遵此道而行：
+
+寻之->随之->伴之->察之->为之
+
+
+So, if you want to be a hacker, repeat the following things until you believe them:
+
+由此，假如你想成为一名黑客，那就不断复述以下内容，直到你信仰它们。
+
+
+1. The world is full of fascinating problems waiting to be solved.
+
+1、世界充满了迷人的问题，有待于你去解决。
+
+Being a hacker is lots of fun, but it's a kind of fun that takes lots of effort. The effort takes motivation. Successful athletes get their motivation from a kind of physical delight in making their bodies perform, in pushing themselves past their own physical limits. Similarly, to be a hacker you have to get a basic thrill from solving problems, sharpening your skills, and exercising your intelligence.
+
+做一名黑客乐趣无穷，但这种乐趣却是建立在诸多努力之上的。勤奋会助你进步。成功的运动员之所以能进步，源于一种肢体运动带来的身体欢愉，从而能让他们挑战自己身体的极限。同样的，欲为黑客，最基本的是：你得一听到要解决某个问题时，就产生一种因兴奋而来的颤栗，因此不断磨练自己的技术，并把你的才智用到实践上。
+
+If you aren't the kind of person that feels this way naturally, you'll need to become one in order to make it as a hacker. Otherwise you'll find your hacking energy is sapped by distractions like sex, money, and social approval.
+
+如果你天生就做不到上述这一点，要想成为黑客，你得想办法成为这样的人。否则你会发现你的hacking精力会被其他消遣给吸干了，比如sex、money以及社会认可。
+
+(You also have to develop a kind of faith in your own learning capacity — a belief that even though you may not know all of what you need to solve a problem, if you tackle just a piece of it and learn from that, you'll learn enough to solve the next piece — and so on, until you're done.)
+
+（你同样需要磨练对自己学习潜能的信念——也就是说，对于某个待解决的问题，即便你无法懂得所有方面，你也必须相信自己能行，将问题大而化小切为细片，研其一片穷究其本质，从中领悟新知识，再用你学到的去研究下一片——以此类推，直到全部完成。）
+
+
+2. No problem should ever have to be solved twice.
+
+不要重复解决问题
+
+Creative brains are a valuable, limited resource. They shouldn't be wasted on re-inventing the wheel when there are so many fascinating new problems waiting out there.
+
+有创造性的脑袋瓜子是价值连城的稀缺资源。世上充满了如此多妙不可言的问题等待解决，绝不能把它们耗费在重复造轮子上。
+
+To behave like a hacker, you have to believe that the thinking time of other hackers is precious — so much so that it's almost a moral duty for you to share information, solve problems and then give the solutions away just so other hackers can solve new problems instead of having to perpetually re-address old ones.
+
+举手投足都要像个黑客，你得搞清楚思考的时间对其他黑客是十分宝贵的——所以共享信息几乎算得上一个道德任务，解决问题然后公布你的解决方案，以节约其他黑客的脑力和时间去解决新问题，而不是老在同一个问题上打转转。
+
+Note, however, that "No problem should ever have to be solved twice." does not imply that you have to consider all existing solutions sacred, or that there is only one right solution to any given problem. Often, we learn a lot about the problem that we didn't know before by studying the first cut at a solution. It's OK, and often necessary, to decide that we can do better. What's not OK is artificial technical, legal, or institutional barriers (like closed-source code) that prevent a good solution from being re-used and force people to re-invent wheels.
+
+记住，无论如何，“不要解决重复问题”并不暗示着你要把所有已有的答案当作神圣不可怀疑的教条，或者误以为“自古华山一条道”。一般来说，倘若我们在已有答案为突破口进行研究，会学到许多以前未知的东西。这样才好，且是很必要的，站在别人肩膀上决定了我们可以做得更好。但有的东西就不能照搬，比如人工技术（即人为规定的东西）、法律的或制度方面的障碍（比如封闭源代码），这些不仅阻碍你从前人经验中取得妙方，且会强迫你去重新造轮子！
+
+(You don't have to believe that you're obligated to give all your creative product away, though the hackers that do are the ones that get most respect from other hackers. It's consistent with hacker values to sell enough of it to keep you in food and rent and computers. It's fine to use your hacking skills to support a family or even get rich, as long as you don't forget your loyalty to your art and your fellow hackers while doing it.)
+
+（你不必以为要把你自己所有有创造性的成果白白送人，尽管你真做到这样黑客们会十分尊重你。用你的成果去卖个好价钱，从而保证你有饭吃然后租台好机子，这与黑客的价值观是一致的。因此用你的黑客技术来养家糊口甚至勤劳致富，那当然是好的，只要你做这些事的时候别忘了忠于自己的艺术和同道朋友就OK了！）
+
+
+3. Boredom and drudgery are evil.
+
+琐事和苦差事恶不可言
+
+Hackers (and creative people in general) should never be bored or have to drudge at stupid repetitive work, because when this happens it means they aren't doing what only they can do — solve new problems. This wastefulness hurts everybody. Therefore boredom and drudgery are not just unpleasant but actually evil.
+
+黑客们（还有普遍意义上具有创造性的人们）绝不应当没落于无聊的琐事和重复劳动的苦差事当中，因为搞这些东东是不能体现出真正的黑客价值——解决新问题的，而这是黑客唯一能做且该做的。这种糟蹋会为每个人带来伤害。因此琐事和苦差事可不仅意味着各种不爽，且简直恶不可言。
+
+To behave like a hacker, you have to believe this enough to want to automate away the boring bits as much as possible, not just for yourself but for everybody else (especially other hackers).
+
+举手投足要像个黑客，你得搞清楚：想个办法尽可能把枯燥的事情自动完成就足够了，而不是让你来亲自完成或者把别人推下火坑（尤其是把黑客推下火坑）。
+
+(There is one apparent exception to this. Hackers will sometimes do things that may seem repetitive or boring to an observer as a mind-clearing exercise, or in order to acquire a skill or have some particular kind of experience you can't have otherwise. But this is by choice — nobody who can think should ever be forced into a situation that bores them.)
+
+（仅有一个例外。黑客们偶尔会做一些在旁人看来枯燥乏味且重复的工作，以此作为一种放松脑力的运动；或者为了掌握某种以前从未学过的技巧而不断勤加修炼。但这别无他法——否则任何一个有脑子的人都不会强迫自己陷入这种境况。）
+
+
+4. Freedom is good.
+
+自由为善
+
+
+Hackers are naturally anti-authoritarian. Anyone who can give you orders can stop you from solving whatever problem you're being fascinated by — and, given the way authoritarian minds work, will generally find some appallingly stupid reason to do so. So the authoritarian attitude has to be fought wherever you find it, lest it smother you and other hackers.
+
+黑客天生就反独裁。任何能够指使你的人，都会阻止你去解决那些牢牢吸引住你的问题——并且，给你做一些独裁性的思想工作，他们会找到一些令人震撼的SB缘由来这样做。所以你一旦发现独裁性的观点，就得去反抗它，免得它抑制住你或其他黑客。
+
+
+(This isn't the same as fighting all authority. Children need to be guided and criminals restrained. A hacker may agree to accept some kinds of authority in order to get something he wants more than the time he spends following orders. But that's a limited, conscious bargain; the kind of personal surrender authoritarians want is not on offer.)
+
+（这并不是说要反抗所有的权威。孩童们需要被引导且被限制不良行为。一名黑客或许会接受一些权威性的东西从而有所收获，而并非唯唯诺诺。但这得通过有限度的、有意识地商榷来进行；屈从于独裁的家伙缺乏针锋相对地反驳。）
+
+
+Authoritarians thrive on censorship and secrecy. And they distrust voluntary cooperation and information-sharing — they only like ‘cooperation’ that they control. So to behave like a hacker, you have to develop an instinctive hostility to censorship, secrecy, and the use of force or deception to compel responsible adults. And you have to be willing to act on that belief.
+
+独裁兴于监察和保密。并且他们不信任自发协作和信息共享——他们只喜欢“合作”，这样他们才好控制。所以若要举手投足像个黑客，你得发掘出你对于监察和保密，以及暴力和胁迫来对待有思想的成人的本能抗拒。你得在这个信念下甘愿这样做。
+
+
+5. Attitude is no substitute for competence.
+
+态度无法取代才干
+
+To be a hacker, you have to develop some of these attitudes. But copping an attitude alone won't make you a hacker, any more than it will make you a champion athlete or a rock star. Becoming a hacker will take intelligence, practice, dedication, and hard work.
+
+要成为一名黑客，你得培养出一些黑客该有的态度。但仅仅靠这些态度并不能让你成为一名黑客，加上其他因素才能够让你成为田径冠军或摇滚巨星。想成黑客，得综合智慧、实践、奉献以及不懈地努力。
+
+
+Therefore, you have to learn to distrust attitude and respect competence of every kind. Hackers won't let posers waste their time, but they worship competence — especially competence at hacking, but competence at anything is valued. Competence at demanding skills that few can master is especially good, and competence at demanding skills that involve mental acuteness, craft, and concentration is best.
+
+因此，你得学会不过份信任态度本身，而重视各方面才能的培养。黑客不会容许装腔作势的人浪费他们的时间，但他们崇拜才干——尤其是hacking的才干，当然也崇拜其他有价值的才干。拥有某些奇门密技才堪甚佳！但若能在拥有独门密技的同时还拥有独特心得、卓越的匠艺及专注的精神，那才是顶尖高人。
+
+If you revere competence, you'll enjoy developing it in yourself — the hard work and dedication will become a kind of intense play rather than drudgery. That attitude is vital to becoming a hacker.
+
+如果你崇尚才智，你将会在自我培养中获得莫大享受——艰苦努力和无私奉献将成为一种富于热情的玩耍而非苦差事。这样一种态度才是成为黑客的关键。
+
+
+Basic Hacking Skills
+
+基本hacking的技能
+
+1. Learn how to program.
+1.学学怎么编程
+2. Get one of the open-source Unixes and learn to use and run it.
+去下一份自由开源的类Unix OS，学着靠近她，让她开心起来.
+3. Learn how to use the World Wide Web and write HTML.
+3.学学如何用万维网，写HTML.
+4. If you don't have functional English, learn it.
+4.如果英语不行,请学习英语.
+
+The hacker attitude is vital, but skills are even more vital. Attitude is no substitute for competence, and there's a certain basic toolkit of skills which you have to have before any hacker will dream of calling you one.
+
+态度对于hacker来说极其重要，但技能才是生死攸关。态度不可替代才能。任何hacker在应招梦想的呼唤之前，必须掌握某类本质技术的相关技能。
+
+
+This toolkit changes slowly over time as technology creates new skills and makes old ones obsolete. For example, it used to include programming in machine language, and didn't until recently involve HTML. But right now it pretty clearly includes the following:
+
+这类技术在经历了长时间的技术更替之后也没有多少变化（注：也就是说经得起时间考验而不过时）。比如，她曾被用于机器语言编程中，但当今的HTML编程中亦能见其身影。而现在可以可清晰明确地列举她们如下：
+
+1. Learn how to program.
+1.怎么样学习编写程序.
+
+
+This, of course, is the fundamental hacking skill. If you don't know any computer languages, I recommend starting with Python. It is cleanly designed, well documented, and relatively kind to beginners. Despite being a good first language, it is not just a toy; it is very powerful and flexible and well suited for large projects. I have written a more detailed evaluation of Python. Good tutorials are available at the Python web site.
+
+
+当然，这是最基本的hacking技能。如果你不懂任何电脑语言，我建议你从学习 python开始（注：这是ER的建议，我们会建议你从Scheme开始）。python是一门设计清晰，文档完善且适合初学者的语言。尽管它可作为一门好的首选语言，却并不是玩具级的；它的功能非常强大且灵活，也适合于大项目。我曾经写过关于python进化的细节。python网站上的教程是很好的。
+
+I used to recommend Java as a good language to learn early, but this critique has changed my mind (search for “The Pitfalls of Java as a First Programming Language” within it). A hacker cannot, as they devastatingly put it “approach problem-solving like a plumber in a hardware store”; you have to know what the components actually do. Now I think it is probably best to learn C and Lisp first, then Java.
+
+
+我曾习惯以Java作为首选语言，但现在某种批评(请搜"The pitfalls of Java as a First Programming Language")改变了我的想法。一名hacker会极其厌恶用"五金店式解决思维"（注：我们认为，就是哪里坏了换哪里，要用什么就立刻想用现成的部件来替换那样的“搭积木”式解决思维，或许“不求甚解”这个词是最适合形容这种垃圾方法论的。）来工作；你必须搞清楚Java中的每个组件都干了些什么才算得上懂编程。现在我认为最好先选择学习C和Lisp，之后才是Java.
+
+
+If you get into serious programming, you will have to learn C, the core language of Unix. C++ is very closely related to C; if you know one, learning the other will not be difficult. Neither language is a good one to try learning as your first, however. And, actually, the more you can avoid programming in C the more productive you will be.
+倘若你妄图浸入一种庄重的编程范式当中，你必须学习C语言，UNIX的核心编程语言。C++是与C非常近似的语言；假如你懂得其中一门，那学习另外一门并不困难（注：这个观点历来备受争议，因为真正的C++程序员会拿STL、模板、以及重构之类的东东来说事，以显得C++比起C来是多么高贵。但实际上不要忘了，这些很牛叉的东东跟语言本身是毫无关系的，那已经属于程序设计领域了。所以对于这个观点的理解，只要简单地认为，懂得C的语法再去掌握C++语法，仅仅是语法，是毫不困难的。另，我再加一句，动不动就拿起STL、模板之类，那你又陷入“五金店式思维”了——NalaGinrut）无论如何，它们之中任何一个都可以作为你入门学习的最佳语言。而且，确切地说，你越是有本事避免用C编程，那说明你水平越高（注：那是在你真正了解了不用C解决某些问题比登天还难之后，比如写OS底层或者试图用迭代解决某类问题。虽然理论上任何递归过程都可以转化为迭代，但要知道现实遇到的问题中只有5%的形式化过程能够被某些聪明人绞尽脑汁转为迭代，对于复杂问题这种转换十分困难且浪费资源，大部分情况还是得靠递归——别相信你的教科书，它总是找些特例让你认为世界是多么的简单和美好——而C处理递归是远不如FP的。初学者请忽略这个容易让你们好高骛远的说法）。
+
+
+C is very efficient, and very sparing of your machine's resources. Unfortunately, C gets that efficiency by requiring you to do a lot of low-level management of resources (like memory) by hand. All that low-level code is complex and bug-prone, and will soak up huge amounts of your time on debugging. With today's machines as powerful as they are, this is usually a bad tradeoff — it's smarter to use a language that uses the machine's time less efficiently, but your time much more efficiently. Thus, Python.
+
+C是非常有效率的语言，它十分节约你的机器资源。但不幸的是，C的这种高效，是需要你自己手动完成诸多的底层资源管理（比如内存管理）为代价的。所有的底层代码都很复杂且毛病甚多，且会花费你大量的时间来debug。出于现今的机器都有十分强大之机能考虑，这种消耗可谓是极坏的折衷方案——一个比较明智的办法，是利用某种语言的特性，以降低一些机器效率为代价，来替你完成这些琐事，这样你会更有效率。因此，选用Python吧~
+
+Other languages of particular importance to hackers include Perl and LISP. Perl is worth learning for practical reasons; it's very widely used for active web pages and system administration, so that even if you never write Perl you should learn to read it. Many people use Perl in the way I suggest you should use Python, to avoid C programming on jobs that don't require C's machine efficiency. You will need to be able to understand their code.
+
+其他对黑客来说特别重要的语言还有Perl和Lisp。Perl就应用上的因素来说是值得学习的；它广泛用于动态页面和系统管理，以至于即使你永远不写Perl 程序你也应该学会读懂它。许多学习Perl有困那的人我会建议他们使用Python，以避免在不需要C的底层效率的工作中被迫采用C编程。
+
+
+
+LISP is worth learning for a different reason — the profound enlightenment experience you will have when you finally get it. That experience will make you a better programmer for the rest of your days, even if you never actually use LISP itself a lot. (You can get some beginning experience with LISP fairly easily by writing and modifying editing modes for the Emacs text editor, or Script-Fu plugins for the GIMP.)
+
+Lisp 的学习价值与Perl完全不同——当你领悟它的时候，你会获得非常深刻的启示体验。这种体验会令你在接下来的日子里成为一名更棒的程序员，即便你实际上都不怎么用Lisp来做事情。（你可以为Emacs编辑器编写或修改一些编辑模式来学习一点Lisp入门知识，或者研究下GIMP的Script-Fu插件也行。）
+
+It's best, actually, to learn all five of Python, C/C++, Java, Perl, and LISP. Besides being the most important hacking languages, they represent very different approaches to programming, and each will educate you in valuable ways.
+
+实际上，最好学会这五种语言Python, C/C++, Java, Perl 和 LISP， 这些语言，除了成为最重要要的黑客语言之外，还体现出了不同的编程方向，并且每种语言都会教会你多种有价值的Hacking方式。
+
+But be aware that you won't reach the skill level of a hacker or even merely a programmer simply by accumulating languages — you need to learn how to think about programming problems in a general way, independent of any one language. To be a real hacker, you need to get to the point where you can learn a new language in days by relating what's in the manual to what you already know. This means you should learn several very different languages.
+
+I can't give complete instructions on how to learn to program here — it's a complex skill. But I can tell you that books and courses won't do it — many, maybe most of the best hackers are self-taught. You can learn language features — bits of knowledge — from books, but the mind-set that makes that knowledge into living skill can be learned only by practice and apprenticeship. What will do it is (a) reading code and (b) writing code.
+
+Peter Norvig, who is one of Google's top hackers and the co-author of the most widely used textbook on AI, has written an excellent essay called Teach Yourself Programming in Ten Years. His "recipe for programming success" is worth careful attention.
+
+Learning to program is like learning to write good natural language. The best way to do it is to read some stuff written by masters of the form, write some things yourself, read a lot more, write a little more, read a lot more, write some more ... and repeat until your writing begins to develop the kind of strength and economy you see in your models.
+
+Finding good code to read used to be hard, because there were few large programs available in source for fledgeling hackers to read and tinker with. This has changed dramatically; open-source software, programming tools, and operating systems (all built by hackers) are now widely available. Which brings me neatly to our next topic...
+2. Get one of the open-source Unixes and learn to use and run it.
+
+I'll assume you have a personal computer or can get access to one. (Take a moment to appreciate how much that means. The hacker culture originally evolved back when computers were so expensive that individuals could not own them.) The single most important step any newbie can take toward acquiring hacker skills is to get a copy of Linux or one of the BSD-Unixes or OpenSolaris, install it on a personal machine, and run it.
+
+Yes, there are other operating systems in the world besides Unix. But they're distributed in binary — you can't read the code, and you can't modify it. Trying to learn to hack on a Microsoft Windows machine or under any other closed-source system is like trying to learn to dance while wearing a body cast.
+
+Under Mac OS X it's possible, but only part of the system is open source — you're likely to hit a lot of walls, and you have to be careful not to develop the bad habit of depending on Apple's proprietary code. If you concentrate on the Unix under the hood you can learn some useful things.
+
+Unix is the operating system of the Internet. While you can learn to use the Internet without knowing Unix, you can't be an Internet hacker without understanding Unix. For this reason, the hacker culture today is pretty strongly Unix-centered. (This wasn't always true, and some old-time hackers still aren't happy about it, but the symbiosis between Unix and the Internet has become strong enough that even Microsoft's muscle doesn't seem able to seriously dent it.)
+
+So, bring up a Unix — I like Linux myself but there are other ways (and yes, you can run both Linux and Microsoft Windows on the same machine). Learn it. Run it. Tinker with it. Talk to the Internet with it. Read the code. Modify the code. You'll get better programming tools (including C, LISP, Python, and Perl) than any Microsoft operating system can dream of hosting, you'll have fun, and you'll soak up more knowledge than you realize you're learning until you look back on it as a master hacker.
+
+For more about learning Unix, see The Loginataka. You might also want to have a look at The Art Of Unix Programming.
+
+To get your hands on a Linux, see the Linux Online! site; you can download from there or (better idea) find a local Linux user group to help you with installation.
+
+During the first ten years of this HOWTO's life, I reported that from a new user's point of view, all Linux distributions are almost equivalent. But in 2006-2007, an actual best choice emerged: Ubuntu. While other distros have their own areas of strength, Ubuntu is far and away the most accessible to Linux newbies.
+
+You can find BSD Unix help and resources at www.bsd.org.
+
+A good way to dip your toes in the water is to boot up what Linux fans call a live CD, a distribution that runs entirely off a CD without having to modify your hard disk. This will be slow, because CDs are slow, but it's a way to get a look at the possibilities without having to do anything drastic.
+
+I have written a primer on the basics of Unix and the Internet.
+
+I used to recommend against installing either Linux or BSD as a solo project if you're a newbie. Nowadays the installers have gotten good enough that doing it entirely on your own is possible, even for a newbie. Nevertheless, I still recommend making contact with your local Linux user's group and asking for help. It can't hurt, and may smooth the process.
+3. Learn how to use the World Wide Web and write HTML.
+
+Most of the things the hacker culture has built do their work out of sight, helping run factories and offices and universities without any obvious impact on how non-hackers live. The Web is the one big exception, the huge shiny hacker toy that even politicians admit has changed the world. For this reason alone (and a lot of other good ones as well) you need to learn how to work the Web.
+
+This doesn't just mean learning how to drive a browser (anyone can do that), but learning how to write HTML, the Web's markup language. If you don't know how to program, writing HTML will teach you some mental habits that will help you learn. So build a home page. Try to stick to XHTML, which is a cleaner language than classic HTML. (There are good beginner tutorials on the Web; here's one.)
+
+But just having a home page isn't anywhere near good enough to make you a hacker. The Web is full of home pages. Most of them are pointless, zero-content sludge — very snazzy-looking sludge, mind you, but sludge all the same (for more on this see The HTML Hell Page).
+
+To be worthwhile, your page must have content — it must be interesting and/or useful to other hackers. And that brings us to the next topic...
+4. If you don't have functional English, learn it.
+
+As an American and native English-speaker myself, I have previously been reluctant to suggest this, lest it be taken as a sort of cultural imperialism. But several native speakers of other languages have urged me to point out that English is the working language of the hacker culture and the Internet, and that you will need to know it to function in the hacker community.
+
+Back around 1991 I learned that many hackers who have English as a second language use it in technical discussions even when they share a birth tongue; it was reported to me at the time that English has a richer technical vocabulary than any other language and is therefore simply a better tool for the job. For similar reasons, translations of technical books written in English are often unsatisfactory (when they get done at all).
+
+Linus Torvalds, a Finn, comments his code in English (it apparently never occurred to him to do otherwise). His fluency in English has been an important factor in his ability to recruit a worldwide community of developers for Linux. It's an example worth following.
+
+Being a native English-speaker does not guarantee that you have language skills good enough to function as a hacker. If your writing is semi-literate, ungrammatical, and riddled with misspellings, many hackers (including myself) will tend to ignore you. While sloppy writing does not invariably mean sloppy thinking, we've generally found the correlation to be strong — and we have no use for sloppy thinkers. If you can't yet write competently, learn to.
+Status in the Hacker Culture
+
+1. Write open-source software
+2. Help test and debug open-source software
+3. Publish useful information
+4. Help keep the infrastructure working
+5. Serve the hacker culture itself
+
+Like most cultures without a money economy, hackerdom runs on reputation. You're trying to solve interesting problems, but how interesting they are, and whether your solutions are really good, is something that only your technical peers or superiors are normally equipped to judge.
+
+Accordingly, when you play the hacker game, you learn to keep score primarily by what other hackers think of your skill (this is why you aren't really a hacker until other hackers consistently call you one). This fact is obscured by the image of hacking as solitary work; also by a hacker-cultural taboo (gradually decaying since the late 1990s but still potent) against admitting that ego or external validation are involved in one's motivation at all.
+
+Specifically, hackerdom is what anthropologists call a gift culture. You gain status and reputation in it not by dominating other people, nor by being beautiful, nor by having things other people want, but rather by giving things away. Specifically, by giving away your time, your creativity, and the results of your skill.
+
+There are basically five kinds of things you can do to be respected by hackers:
+1. Write open-source software
+
+The first (the most central and most traditional) is to write programs that other hackers think are fun or useful, and give the program sources away to the whole hacker culture to use.
+
+(We used to call these works “free software”, but this confused too many people who weren't sure exactly what “free” was supposed to mean. Most of us now prefer the term “open-source” software).
+
+Hackerdom's most revered demigods are people who have written large, capable programs that met a widespread need and given them away, so that now everyone uses them.
+
+But there's a bit of a fine historical point here. While hackers have always looked up to the open-source developers among them as our community's hardest core, before the mid-1990s most hackers most of the time worked on closed source. This was still true when I wrote the first version of this HOWTO in 1996; it took the mainstreaming of open-source software after 1997 to change things. Today, "the hacker community" and "open-source developers" are two descriptions for what is essentially the same culture and population — but it is worth remembering that this was not always so.
+2. Help test and debug open-source software
+
+They also serve who stand and debug open-source software. In this imperfect world, we will inevitably spend most of our software development time in the debugging phase. That's why any open-source author who's thinking will tell you that good beta-testers (who know how to describe symptoms clearly, localize problems well, can tolerate bugs in a quickie release, and are willing to apply a few simple diagnostic routines) are worth their weight in rubies. Even one of these can make the difference between a debugging phase that's a protracted, exhausting nightmare and one that's merely a salutary nuisance.
+
+If you're a newbie, try to find a program under development that you're interested in and be a good beta-tester. There's a natural progression from helping test programs to helping debug them to helping modify them. You'll learn a lot this way, and generate good karma with people who will help you later on.
+3. Publish useful information
+
+Another good thing is to collect and filter useful and interesting information into web pages or documents like Frequently Asked Questions (FAQ) lists, and make those generally available.
+
+Maintainers of major technical FAQs get almost as much respect as open-source authors.
+4. Help keep the infrastructure working
+
+The hacker culture (and the engineering development of the Internet, for that matter) is run by volunteers. There's a lot of necessary but unglamorous work that needs done to keep it going — administering mailing lists, moderating newsgroups, maintaining large software archive sites, developing RFCs and other technical standards.
+
+People who do this sort of thing well get a lot of respect, because everybody knows these jobs are huge time sinks and not as much fun as playing with code. Doing them shows dedication.
+5. Serve the hacker culture itself
+
+Finally, you can serve and propagate the culture itself (by, for example, writing an accurate primer on how to become a hacker :-)). This is not something you'll be positioned to do until you've been around for while and become well-known for one of the first four things.
+
+The hacker culture doesn't have leaders, exactly, but it does have culture heroes and tribal elders and historians and spokespeople. When you've been in the trenches long enough, you may grow into one of these. Beware: hackers distrust blatant ego in their tribal elders, so visibly reaching for this kind of fame is dangerous. Rather than striving for it, you have to sort of position yourself so it drops in your lap, and then be modest and gracious about your status.
+The Hacker/Nerd Connection
+
+Contrary to popular myth, you don't have to be a nerd to be a hacker. It does help, however, and many hackers are in fact nerds. Being something of a social outcast helps you stay concentrated on the really important things, like thinking and hacking.
+
+For this reason, many hackers have adopted the label ‘geek’ as a badge of pride — it's a way of declaring their independence from normal social expectations (as well as a fondness for other things like science fiction and strategy games that often go with being a hacker). The term 'nerd' used to be used this way back in the 1990s, back when 'nerd' was a mild pejorative and 'geek' a rather harsher one; sometime after 2000 they switched places, at least in U.S. popular culture, and there is now even a significant geek-pride culture among people who aren't techies.
+
+If you can manage to concentrate enough on hacking to be good at it and still have a life, that's fine. This is a lot easier today than it was when I was a newbie in the 1970s; mainstream culture is much friendlier to techno-nerds now. There are even growing numbers of people who realize that hackers are often high-quality lover and spouse material.
+
+If you're attracted to hacking because you don't have a life, that's OK too — at least you won't have trouble concentrating. Maybe you'll get a life later on.
+Points For Style
+
+Again, to be a hacker, you have to enter the hacker mindset. There are some things you can do when you're not at a computer that seem to help. They're not substitutes for hacking (nothing is) but many hackers do them, and feel that they connect in some basic way with the essence of hacking.
+
+  * 
+
+> Learn to write your native language well. Though it's a common stereotype that programmers can't write, a surprising number of hackers (including all the most accomplished ones I know of) are very able writers.
+  * 
+
+> Read science fiction. Go to science fiction conventions (a good way to meet hackers and proto-hackers).
+  * 
+
+> Train in a martial-arts form. The kind of mental discipline required for martial arts seems to be similar in important ways to what hackers do. The most popular forms among hackers are definitely Asian empty-hand arts such as Tae Kwon Do, various forms of Karate, Kung Fu, Aikido, or Ju Jitsu. Western fencing and Asian sword arts also have visible followings. In places where it's legal, pistol shooting has been rising in popularity since the late 1990s. The most hackerly martial arts are those which emphasize mental discipline, relaxed awareness, and control, rather than raw strength, athleticism, or physical toughness.
+  * 
+
+> Study an actual meditation discipline. The perennial favorite among hackers is Zen (importantly, it is possible to benefit from Zen without acquiring a religion or discarding one you already have). Other styles may work as well, but be careful to choose one that doesn't require you to believe crazy things.
+  * 
+
+> Develop an analytical ear for music. Learn to appreciate peculiar kinds of music. Learn to play some musical instrument well, or how to sing.
+  * 
+
+> Develop your appreciation of puns and wordplay.
+
+The more of these things you already do, the more likely it is that you are natural hacker material. Why these things in particular is not completely clear, but they're connected with a mix of left- and right-brain skills that seems to be important; hackers need to be able to both reason logically and step outside the apparent logic of a problem at a moment's notice.
+
+Work as intensely as you play and play as intensely as you work. For true hackers, the boundaries between "play", "work", "science" and "art" all tend to disappear, or to merge into a high-level creative playfulness. Also, don't be content with a narrow range of skills. Though most hackers self-describe as programmers, they are very likely to be more than competent in several related skills — system administration, web design, and PC hardware troubleshooting are common ones. A hacker who's a system administrator, on the other hand, is likely to be quite skilled at script programming and web design. Hackers don't do things by halves; if they invest in a skill at all, they tend to get very good at it.
+
+Finally, a few things not to do.
+
+  * 
+
+> Don't use a silly, grandiose user ID or screen name.
+  * 
+
+> Don't get in flame wars on Usenet (or anywhere else).
+  * 
+
+> Don't call yourself a ‘cyberpunk’, and don't waste your time on anybody who does.
+  * 
+
+> Don't post or email writing that's full of spelling errors and bad grammar.
+
+The only reputation you'll make doing any of these things is as a twit. Hackers have long memories — it could take you years to live your early blunders down enough to be accepted.
+
+The problem with screen names or handles deserves some amplification. Concealing your identity behind a handle is a juvenile and silly behavior characteristic of crackers, warez d00dz, and other lower life forms. Hackers don't do this; they're proud of what they do and want it associated with their real names. So if you have a handle, drop it. In the hacker culture it will only mark you as a loser.
+Other Resources
+
+Paul Graham has written an essay called Great Hackers, and another on Undergraduation, in which he speaks much wisdom.
+
+There is a document called How To Be A Programmer that is an excellent complement to this one. It has valuable advice not just about coding and skillsets, but about how to function on a programming team.
+
+I have also written A Brief History Of Hackerdom.
+
+I have written a paper, The Cathedral and the Bazaar, which explains a lot about how the Linux and open-source cultures work. I have addressed this topic even more directly in its sequel Homesteading the Noosphere.
+
+Rick Moen has written an excellent document on how to run a Linux user group.
+
+Rick Moen and I have collaborated on another document on How To Ask Smart Questions. This will help you seek assistance in a way that makes it more likely that you will actually get it.
+
+If you need instruction in the basics of how personal computers, Unix, and the Internet work, see The Unix and Internet Fundamentals HOWTO.
+
+When you release software or write patches for software, try to follow the guidelines in the Software Release Practice HOWTO.
+
+If you enjoyed the Zen poem, you might also like Rootless Root: The Unix Koans of Master Foo.
+
+
+Q:
+
+
+How do I tell if I am already a hacker?
+
+A:
+
+
+Ask yourself the following three questions:
+
+  * 
+
+> Do you speak code, fluently?
+  * 
+
+> Do you identify with the goals and values of the hacker community?
+  * 
+
+> Has a well-established member of the hacker community ever called you a hacker?
+
+If you can answer yes to all three of these questions, you are already a hacker. No two alone are sufficient.
+
+The first test is about skills. You probably pass it if you have the minimum technical skills described earlier in this document. You blow right through it if you have had a substantial amount of code accepted by an open-source development project.
+
+The second test is about attitude. If the five principles of the hacker mindset seemed obvious to you, more like a description of the way you already live than anything novel, you are already halfway to passing it. That's the inward half; the other, outward half is the degree to which you identify with the hacker community's long-term projects.
+
+Here is an incomplete but indicative list of some of those projects: Does it matter to you that Linux improve and spread? Are you passionate about software freedom? Hostile to monopolies? Do you act on the belief that computers can be instruments of empowerment that make the world a richer and more humane place?
+
+But a note of caution is in order here. The hacker community has some specific, primarily defensive political interests — two of them are defending free-speech rights and fending off "intellectual-property" power grabs that would make open source illegal. Some of those long-term projects are civil-liberties organizations like the Electronic Frontier Foundation, and the outward attitude properly includes support of them. But beyond that, most hackers view attempts to systematize the hacker attitude into an explicit political program with suspicion; we've learned, the hard way, that these attempts are divisive and distracting. If someone tries to recruit you to march on your capitol in the name of the hacker attitude, they've missed the point. The right response is probably “Shut up and show them the code.”
+
+The third test has a tricky element of recursiveness about it. I observed in the section called “What Is a Hacker?” that being a hacker is partly a matter of belonging to a particular subculture or social network with a shared history, an inside and an outside. In the far past, hackers were a much less cohesive and self-aware group than they are today. But the importance of the social-network aspect has increased over the last thirty years as the Internet has made connections with the core of the hacker subculture easier to develop and maintain. One easy behavioral index of the change is that, in this century, we have our own T-shirts.
+
+Sociologists, who study networks like those of the hacker culture under the general rubric of "invisible colleges", have noted that one characteristic of such networks is that they have gatekeepers — core members with the social authority to endorse new members into the network. Because the "invisible college" that is hacker culture is a loose and informal one, the role of gatekeeper is informal too. But one thing that all hackers understand in their bones is that not every hacker is a gatekeeper. Gatekeepers have to have a certain degree of seniority and accomplishment before they can bestow the title. How much is hard to quantify, but every hacker knows it when they see it.
+
+Q:Will you teach me how to hack?
+
+Q:你会教我怎么样hack吗?
+
+A:Since first publishing this page, I've gotten several requests a week (often several a day) from people to "teach me all about hacking". Unfortunately, I don't have the time or energy to do this; my own hacking projects, and working as an open-source advocate, take up 110% of my time.
+
+A:自从第一次发布这篇文章.我几乎每周都收到一些人们来的请求"教我怎么样hacking吧".不幸的是.我没有时间或者精力去做:我自己在自由开源项目的hacking已经占用了我110%的时间.
+
+Even if I did, hacking is an attitude and skill you basically have to teach yourself. You'll find that while real hackers want to help you, they won't respect you if you beg to be spoon-fed everything they know.
+
+即使我教你,hacking本身需要你自学基本的一些技能和hacking的态度.你或许会暂时找到一些真正的hacker帮助你,如果你不断的向他们乞求他们已经知道的知识,他们是不会尊重你的.
+
+Learn a few things first. Show that you're trying, that you're capable of learning on your own. Then go to the hackers you meet with specific questions.
+
+先学习一些基本的技能,展示了你是有能力自学你所hacking的领域.之后再去跟hacker们讨论问题吧.
+
+If you do email a hacker asking for advice, here are two things to know up front. First, we've found that people who are lazy or careless in their writing are usually too lazy and careless in their thinking to make good hackers — so take care to spell correctly, and use good grammar and punctuation, otherwise you'll probably be ignored. Secondly, don't dare ask for a reply to an ISP account that's different from the account you're sending from; we find people who do that are usually thieves using stolen accounts, and we have no interest in rewarding or assisting thievery.
+
+如果你发e-mail询问建议,这里有2件事情必须先明白.首先,hacker们对思考让你编程好的hacker和写给你的回复都是抱很懒散或者不关心的态度---所以请认真检查拼写,使用正确的语法和标点符号,否则你大概会被忽略掉.第二,不要回复一个跟你发信地址不相同的ISP账户; 这样一般是盗用了账户的人在使用,没人会有兴趣协助一个盗贼..
+
+Q:How can I get started, then?
+我怎么样开始,之后呢?
+
+A:The best way for you to get started would probably be to go to a LUG (Linux user group) meeting. You can find such groups on the LDP General Linux Information Page; there is probably one near you, possibly associated with a college or university. LUG members will probably give you a Linux if you ask, and will certainly help you install one and get started.
+
+最好的方式是去寻找当地的Linux用户组(比如chengdu linux user group).你可以在像LDP的网页上找到离你最近的LUG,大学里的也inux社群也不错.如果你索要Linux,LUG成员一般会给你,并且帮助你安装和使用.
+
+Q:When do you have to start? Is it too late for me to learn?
+你是什么时候开始hacking?对我来讲学习是迟了一些吗?
+
+A:Any age at which you are motivated to start is a good age. Most people seem to get interested between ages 15 and 20, but I know of exceptions in both directions.
+
+任何有动力学习的年龄都是很好的年龄.大部分人看起来是在15到20之间开始hacking的,但我知道有例外的情况.
+
+Q:How long will it take me to learn to hack?
+学习hack会占用我多少时间?
+
+A:That depends on how talented you are and how hard you work at it. Most people who try can acquire a respectable skill set in eighteen months to two years, if they concentrate. Don't think it ends there, though; in hacking (as in many other fields) it takes about ten years to achieve mastery. And if you are a real hacker, you will spend the rest of your life learning and perfecting your craft.
+
+取决于你的才能和你的努力程度.如果专注的话大部分人获得受人尊重的技能大约在18个月到2年之间.不要以为这就是终点了.10年的hacking才会让你精通一个领域.如果你是一名真正的hacker,你会花你整个一生的时间去学习和改造你的技能.
+
+Q:Is Visual Basic a good language to start with?
+
+VB是一门不错的开始语言吗?
+
+A:If you're asking this question, it almost certainly means you're thinking about trying to hack under Microsoft Windows. This is a bad idea in itself. When I compared trying to learn to hack under Windows to trying to learn to dance while wearing a body cast, I wasn't kidding. Don't go there. It's ugly, and it never stops being ugly.
+
+
+如果你问这个问题,那意味着你在思考在微软的Windows下开始hacking.这是一个非常糟糕的主意.在Windows下开始hacking等于锁链学习跳舞一样,我绝对不是开玩笑.不要这么搞,微软很丑陋,而且从来没有停止变得丑陋.
+
+There is a specific problem with Visual Basic; mainly that it's not portable. Though there is a prototype open-source implementations of Visual Basic, the applicable ECMA standards don't cover more than a small set of its programming interfaces. On Windows most of its library support is proprietary to a single vendor (Microsoft); if you aren't extremely careful about which features you use — more careful than any newbie is really capable of being — you'll end up locked into only those platforms Microsoft chooses to support. If you're starting on a Unix, much better languages with better libraries are available. Python, for example.
+
+
+有一个问题是VB并不能移植到其他平台.虽然有一个开源实现的VB,ECMA标准不会包含更多的编程接口.在Windows上大部分的库是专有的,并且只有一个提供商---微软;如果你不极度的小心哪些你在使用的功能---比任何新手都要小心--你会被锁在微软的平台里.如果你使用Unix作为开始,有更好的语言和更好的库可以使用,比如说python.
+
+Also, like other Basics, Visual Basic is a poorly-designed language that will teach you bad programming habits. No, don't ask me to describe them in detail; that explanation would fill a book. Learn a well-designed language instead.
+
+
+像其他Basic语言一样,VB的设计很糟糕而且会教你很多不好的编程习惯.不要问我为什么;因为光解释就可以填满一本书.去学习拥有良好设计的语言吧.
+
+One of those bad habits is becoming dependent on a single vendor's libraries, widgets, and development tools. In general, any language that isn't fully supported under at least Linux or one of the BSDs, and/or at least three different vendors' operating systems, is a poor one to learn to hack in.
+
+
+有一个坏习惯是依赖单一的提供商所提供的库,widgets和开发工具.通常任何语言都不是单一的支持Linux或者其中一个BSD的发行版,和第三方提供的操作系统,如果只依赖单一的提供商对hacking是很糟糕的.
+
+
+Q:Would you help me to crack a system, or teach me how to crack?
+
+你能帮助我入侵一个系统,或者教我怎么样入侵吗?
+
+A:No. Anyone who can still ask such a question after reading this FAQ is too stupid to be educable even if I had the time for tutoring. Any emailed requests of this kind that I get will be ignored or answered with extreme rudeness.
+
+
+不会.任何人在看了FAQ后还问这个问题简直太愚蠢,儒之不可教也,就算我有时间教也不会教.任何发邮件给我关于这个事情的都会被忽略掉或者极端的鄙视你一顿.
+
+Q:
+
+
+How can I get the password for someone else's account?
+
+A:
+
+
+This is cracking. Go away, idiot.
+
+Q:
+
+
+How can I break into/read/monitor someone else's email?
+
+A:
+
+
+This is cracking. Get lost, moron.
+
+Q:
+
+
+How can I steal channel op privileges on IRC?
+
+A:
+
+
+This is cracking. Begone, cretin.
+
+Q:
+
+
+I've been cracked. Will you help me fend off further attacks?
+
+A:
+
+
+No. Every time I've been asked this question so far, it's been from some poor sap running Microsoft Windows. It is not possible to effectively secure Windows systems against crack attacks; the code and architecture simply have too many flaws, which makes securing Windows like trying to bail out a boat with a sieve. The only reliable prevention starts with switching to Linux or some other operating system that is designed to at least be capable of security.
+
+Q:
+
+
+I'm having problems with my Windows software. Will you help me?
+
+A:
+
+
+Yes. Go to a DOS prompt and type "format c:". Any problems you are experiencing will cease within a few minutes.
+
+Q:
+
+
+Where can I find some real hackers to talk with?
+
+A:
+
+
+The best way is to find a Unix or Linux user's group local to you and go to their meetings (you can find links to several lists of user groups on the LDP site at ibiblio).
+
+(I used to say here that you wouldn't find any real hackers on IRC, but I'm given to understand this is changing. Apparently some real hacker communities, attached to things like GIMP and Perl, have IRC channels now.)
+
+Q:
+
+
+Can you recommend useful books about hacking-related subjects?
+
+A:
+
+
+I maintain a Linux Reading List HOWTO that you may find helpful. The Loginataka may also be interesting.
+
+For an introduction to Python, see the introductory materials on the Python site.
+
+Q:
+
+
+Do I need to be good at math to become a hacker?
+
+A:
+
+
+No. Hacking uses very little formal mathematics or arithmetic. In particular, you won't usually need trigonometry, calculus or analysis (there are exceptions to this in a handful of specific application areas like 3-D computer graphics). Knowing some formal logic and Boolean algebra is good. Some grounding in finite mathematics (including finite-set theory, combinatorics, and graph theory) can be helpful.
+
+Much more importantly: you need to be able to think logically and follow chains of exact reasoning, the way mathematicians do. While the content of most mathematics won't help you, you will need the discipline and intelligence to handle mathematics. If you lack the intelligence, there is little hope for you as a hacker; if you lack the discipline, you'd better grow it.
+
+I think a good way to find out if you have what it takes is to pick up a copy of Raymond Smullyan's book What Is The Name Of This Book?. Smullyan's playful logical conundrums are very much in the hacker spirit. Being able to solve them is a good sign; enjoying solving them is an even better one.
+
+Q:
+
+
+What language should I learn first?
+
+A:
+
+
+XHTML (the latest dialect of HTML) if you don't already know it. There are a lot of glossy, hype-intensive bad HTML books out there, and distressingly few good ones. The one I like best is HTML: The Definitive Guide.
+
+But HTML is not a full programming language. When you're ready to start programming, I would recommend starting with Python. You will hear a lot of people recommending Perl, and Perl is still more popular than Python, but it's harder to learn and (in my opinion) less well designed.
+
+C is really important, but it's also much more difficult than either Python or Perl. Don't try to learn it first.
+
+Windows users, do not settle for Visual Basic. It will teach you bad habits, and it's not portable off Windows. Avoid.
+
+Q:
+
+
+What kind of hardware do I need?
+
+A:
+
+
+It used to be that personal computers were rather underpowered and memory-poor, enough so that they placed artificial limits on a hacker's learning process. This stopped being true in the mid-1990s; any machine from an Intel 486DX50 up is more than powerful enough for development work, X, and Internet communications, and the smallest disks you can buy today are plenty big enough.
+
+The important thing in choosing a machine on which to learn is whether its hardware is Linux-compatible (or BSD-compatible, should you choose to go that route). Again, this will be true for almost all modern machines. The only really sticky areas are modems and wireless cards; some machines have Windows-specific hardware that won't work with Linux.
+
+There's a FAQ on hardware compatibility; the latest version is here.
+
+Q:
+
+
+I want to contribute. Can you help me pick a problem to work on?
+
+A:
+
+
+No, because I don't know your talents or interests. You have to be self-motivated or you won't stick, which is why having other people choose your direction almost never works.
+
+Try this. Watch the project announcements scroll by on Freshmeat for a few days. When you see one that makes you think "Cool! I'd like to work on that!", join it.
+
+Q:
+
+
+Do I need to hate and bash Microsoft?
+
+A:
+
+
+No, you don't. Not that Microsoft isn't loathsome, but there was a hacker culture long before Microsoft and there will still be one long after Microsoft is history. Any energy you spend hating Microsoft would be better spent on loving your craft. Write good code — that will bash Microsoft quite sufficiently without polluting your karma.
+
+Q:
+
+
+But won't open-source software leave programmers unable to make a living?
+
+A:
+
+
+This seems unlikely — so far, the open-source software industry seems to be creating jobs rather than taking them away. If having a program written is a net economic gain over not having it written, a programmer will get paid whether or not the program is going to be open-source after it's done. And, no matter how much "free" software gets written, there always seems to be more demand for new and customized applications. I've written more about this at the Open Source pages.
+
+Q:
+
+
+Where can I get a free Unix?
+
+A:
+
+
+If you don't have a Unix installed on your machine yet, elsewhere on this page I include pointers to where to get the most commonly used free Unix. To be a hacker you need motivation and initiative and the ability to educate yourself. Start now...
